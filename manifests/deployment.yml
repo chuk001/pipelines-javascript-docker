@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: chukpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: chukpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: chukpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: chukpipelinesjavascriptdocker 
+          image: chukacontainerregistry.azurecr.io/chukpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
